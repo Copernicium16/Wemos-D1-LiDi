@@ -2,14 +2,14 @@
 #include <WiFi.h>
 #define LED2 2
 
-const int ULTRA_PIN = 16;
-const int LIGHT_PIN = 17;
-const int PIR_PIN = 27;
-const int TRIG_PIN = 23;
-const int ECHO_PIN = 19;
+const int ULTRA_PIN = ;
+const int LIGHT_PIN = ;
+const int PIR_PIN = ;
+const int TRIG_PIN = ;
+const int ECHO_PIN = ;
 
-char* ssid = "LiDi_IoT";
-char* pass = "L1D1_IoT";
+char* ssid = "****";
+char* pass = "****";
 int timezone = 7*3600;
 int dst = 0;
 int pirState = LOW;
@@ -64,6 +64,7 @@ void loop()
 
 int timeClock()
 {
+  /*Time output*/
   time_t now = time(nullptr);
   struct tm* p_tm = localtime(&now);
   Serial.print(p_tm->tm_hour);
@@ -75,6 +76,7 @@ int timeClock()
 
 int sensor()
 {
+  /*PIR Sensor*/
   if (value == HIGH)
   {
     digitalWrite(LED2, HIGH);
@@ -108,6 +110,7 @@ int sensor()
 
 int output()
 {
+  /*Ultrasonic Pest Repeller and Strobe Light*/
   time_t now = time(nullptr);
   struct tm* p_tm = localtime(&now);
   int h = p_tm->tm_hour;
