@@ -62,7 +62,7 @@ void loop()
   sensor();
 }
 
-int timeClock()
+void timeClock()
 {
   /*Time output*/
   time_t now = time(nullptr);
@@ -74,7 +74,7 @@ int timeClock()
   Serial.print(p_tm->tm_sec);
 }
 
-int sensor()
+void sensor()
 {
   /*PIR Sensor*/
   if (value == HIGH)
@@ -108,7 +108,7 @@ int sensor()
   }
 }
 
-int output()
+void output()
 {
   /*Ultrasonic Pest Repeller and Strobe Light*/
   time_t now = time(nullptr);
